@@ -181,10 +181,13 @@ export const updateClassSession = async (req: Request, res: Response) => {
 
     return res.status(200).json(session);
   } catch (error) {
-    return res.status(500).json({
-      message: "Failed to update class session",
-    });
-  }
+  console.error("UPDATE ERROR:", error);
+
+  return res.status(500).json({
+    message: "Failed to update class session",
+    error: error instanceof Error ? error.message : error,
+  });
+}
 };
 export const deleteClassSession = async (req: Request, res: Response) => {
   try {

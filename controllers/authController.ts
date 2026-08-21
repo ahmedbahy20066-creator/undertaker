@@ -35,14 +35,18 @@ export const register = async (req: Request, res: Response) => {
     });
 
     const token = createToken(user._id.toString(), user.role);
-
+res.cookie("token", token, {
+  httpOnly: true,
+  maxAge: 7 * 24 * 60 * 60 * 1000
+});
     return res.status(201).json({
       message: "User registered successfully",
       token
     });
   } catch (error) {
-    return res.status(500).json({ message: "Server error" });
-  }
+  console.error("REGISTER ERROR:", error);
+  return res.status(500).json({ message: "Server error" });
+}
 };
 export const login = async (req: Request, res: Response) => {
   try {
