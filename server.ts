@@ -17,9 +17,20 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use("/class-sessions", classSessionRoutes);
+
 app.use("/auth", authRoutes);
+
 app.use("/bookings", bookingRoutes);
+
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+app.get("/", (req, res) => {
+  res.json({
+    message: "Welcome to Undertaker API",
+    docs: "/api-docs"
+  });
+});
+
 const PORT = process.env.PORT || 3000;
 
 mongoose
