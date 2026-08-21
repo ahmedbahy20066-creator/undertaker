@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import ClassSession from "../models/ClassSession";
-import Booking from "./booking.controllers";
+import Booking from "../models/booking.models";
 export const createClassSession = async (req: Request, res: Response) => {
   try {
     const { title, timeSlot, capacity } = req.body;

@@ -7,7 +7,7 @@ import {
   deleteClassSession,
 } from "../controllers/classSessionController";
 
-import { authenticate, authorize } from "../middleware/auth";
+import { authenticate, authorize } from "../middleware/auth.middleware";
 
 const router = Router();
 

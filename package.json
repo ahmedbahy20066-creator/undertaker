@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "dev": "nodemon --exec tsx server.ts",
+    "start": "tsx server.ts"
+  },
+
   "dependencies": {
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.3",
@@ -10,6 +15,7 @@
     "swagger-jsdoc": "^6.3.0",
     "swagger-ui-express": "^5.0.1"
   },
+
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
     "@types/bcryptjs": "^2.4.6",
