@@ -8,11 +8,11 @@ const options = {
       version: "1.0.0",
       description: "API documentation for the Gym Class Booking system",
     },
-    servers: [
-      {
-        url: "http://localhost:3000",
-      },
-    ],
+   servers: [
+  {
+    url: "https://undertaker-ywkh.onrender.com",
+  },
+],
     components: {
       securitySchemes: {
         bearerAuth: {
